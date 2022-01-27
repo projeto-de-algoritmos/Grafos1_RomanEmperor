@@ -1,10 +1,4 @@
-Roman Emperors Searcher
-
-Temas:
- - Grafos1
- 
-
-# NomedoProjeto
+# Roman Emperors Searcher
 
 **Número da Lista**: 8<br>
 **Conteúdo da Disciplina**: Grafos 1<br>
