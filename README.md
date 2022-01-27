@@ -2,25 +2,17 @@
 
 Temas:
  - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
  
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
 
 # NomedoProjeto
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 8<br>
+**Conteúdo da Disciplina**: Grafos 1<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0026375  |  Daniel Vinicius Ribeiro Alves |
 | xx/xxxxxx  |  xxxx xxxx xxxxx |
 
 ## Sobre 
