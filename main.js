@@ -1,5 +1,5 @@
-const data = require('./data');
-const Graph = require('./graph.js');
+const data = require('./data/data.js');
+const Graph = require('./graph/graph.js');
 
 
 const graph = new Graph();

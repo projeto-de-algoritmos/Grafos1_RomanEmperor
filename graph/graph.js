@@ -5,7 +5,7 @@ module.exports = class Graph {
         this.adjacent = {};
         this.edges = 0;
         this.searchResult = [];
-        this.jsonData = JSON.parse(fs.readFileSync("./csvjson.json"));
+        this.jsonData = JSON.parse(fs.readFileSync("./data/csvjson.json"));
     }
 
     addVertex(v) {
