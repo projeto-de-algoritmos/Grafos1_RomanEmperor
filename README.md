@@ -7,7 +7,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 19/0026375  |  Daniel Vinicius Ribeiro Alves |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0025298  |  Bianca Sofia Brasil de Oliveira |
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
