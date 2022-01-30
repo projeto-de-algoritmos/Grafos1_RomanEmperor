@@ -1,5 +1,20 @@
 const data = require('./data/data.js');
 const Graph = require('./graph/graph.js');
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/img', express.static(__dirname + 'public/img'))
+app.get('', function (req, res) {
+
+    res.sendFile(__dirname + "/public/index.html");
+
+});
+
+app.listen(3000, () => console.log("servidor rodando"));
+
 
 
 const graph = new Graph();
