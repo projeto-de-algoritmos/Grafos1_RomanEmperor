@@ -1,19 +1,28 @@
 const data = require('./data/data.js');
 const Graph = require('./graph/graph.js');
 const express = require('express');
-const path = require('path');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/img', express.static(__dirname + 'public/img'))
 app.use('/js', express.static(__dirname + 'public/img'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.get('', function (req, res) {
-
     res.sendFile(__dirname + "/public/index.html");
 
 });
-
+// teste
+app.post("", function (req, res) {
+    let dinastia = req.body.dinastia
+    let nome = req.body.nome
+    let cidade = req.body.cidade
+    let causa = req.body.causa
+    res.send("Escolhido "+ dinastia + " "+nome + " "+cidade+ " "+causa);
+})
+//
 app.listen(3000, () => console.log("servidor rodando"));
 
 

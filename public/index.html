@@ -27,34 +27,36 @@
     </header>
     <main >
         <section class="container">
+            <form action="" method="POST">
+                
+                <div class="selects">
+                    <select placeholder="Dinastia" name="dinastia" id="select-dinastia" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option  disabled selected>Dinastia</option>
 
-            <div class="selects">
-                <select  id="select-dinastia" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Dinastia</option>
-                   
-                </select>
-            </div>
-            <div class="selects">
-                <select id="select-nome" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Nome</option>
-                  
-                </select>
-            </div>
-            <div class="selects">
-                <select id="select-cidade" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Cidade Natal</option>
-                    
-                </select>
-            </div>
-            <div class="selects">
-                <select id="select-causa" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Causa de Morte</option>
-                 
-                </select>
+                    </select>
+                </div>
+                <div class="selects">
+                    <select  name="nome" id="select-nome" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option disabled selected>Nome</option>
 
-            </div>
-            <button type="button" class="btn btn-dark  btn-sm selects .active" id="botao">Procurar</button>
-        </section>
+                    </select>
+                </div>
+                <div class="selects">
+                    <select name ="cidade" id="select-cidade" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option disabled selected>Cidade Natal</option>
+
+                    </select>
+                </div>
+                <div class="selects">
+                    <select name="causa" id="select-causa" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option disabled selected>Causa de Morte</option>
+
+                    </select>
+
+                </div>
+                <button type="submit" class="btn btn-dark  btn-sm selects .active" id="botao">Procurar</button>
+              </form>
+</section>
     </main>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
