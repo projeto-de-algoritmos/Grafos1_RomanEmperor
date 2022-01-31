@@ -14,16 +14,6 @@ app.get('', function (req, res) {
     res.sendFile(__dirname + "/public/index.html");
 
 });
-// teste
-app.post("", function (req, res) {
-    let dinastia = req.body.dinastia
-    let nome = req.body.nome
-    let cidade = req.body.cidade
-    let causa = req.body.causa
-    res.send("Escolhido "+ dinastia + " "+nome + " "+cidade+ " "+causa);
-})
-//
-app.listen(3000, () => console.log("servidor rodando"));
 
 
 
@@ -41,21 +31,59 @@ let twoElementSearch = (nodeValues, searchType) => {
     firstValueResult = graph.searchResult;
     graph.searchGraphSelect(nodeValues[1], searchType);
     secondValueResult = graph.searchResult;
-    return firstValueResult[0].filter(element => secondValueResult[0].includes(element));
+    return firstValueResult.filter(element => secondValueResult.includes(element));
 };
 let getNameData = (data) => {
+    let response = []
     data.forEach(element1 => {
         graph.jsonData.forEach(element2 => {
             if (element1 === element2.Name) {
-                console.log(element1)
+                response.push(element2)
             }
         });
     });
+    return response
 };
 graph.searchGraphSelect('Caligula', "dfs");
-getNameData(graph.searchResult)
+console.log(getNameData(graph.searchResult))
 console.log(" ----------------------- ")
 graph.searchGraphSelect(['', 'Constantinian', 'Execution'], "bfs");
-getNameData(graph.searchResult)
+console.log(getNameData(graph.searchResult))
 console.log(" ----------------------- ")
-getNameData(twoElementSearch(['Constantinian', ''], "bfs"))
+console.log(getNameData(twoElementSearch(['Constantinian', ''], "bfs")))
+
+// teste
+app.post("", function (req, res) {
+    let dinastia = req.body.dinastia
+    let nome = req.body.nome
+    let cidade = req.body.cidade
+    let causa = req.body.causa
+    if (nome != null && nome != 'Nome') {
+        graph.searchGraphSelect(nome, "dfs");
+        res.send(getNameData(graph.searchResult));
+    }
+    else if ((cidade == null || cidade == 'Cidade natal') && (causa == null || causa == 'Causa da morte')) {
+        graph.searchGraphSelect(dinastia, "bfs");
+        res.send(getNameData(graph.searchResult));
+    } else if ((causa == null || causa == 'Causa da morte') && (dinastia == null || dinastia == 'Dinastia')) {
+        graph.searchGraphSelect(cidade, "bfs");
+        res.send(getNameData(graph.searchResult));
+    } else if ((cidade == null || cidade == 'Cidade natal') && (dinastia == null || dinastia == 'Dinastia')) {
+        graph.searchGraphSelect(causa, "bfs");
+        res.send(getNameData(graph.searchResult));
+    }
+
+    else if (cidade == null || cidade == 'Cidade natal') {
+        res.send(getNameData(twoElementSearch([dinastia, causa], "bfs")))
+    } else if (causa == null || causa == 'Causa da morte') {
+        res.send(getNameData(twoElementSearch([dinastia, cidade], "bfs")))
+    } else if (dinastia == null || dinastia == 'Dinastia') {
+        res.send(getNameData(twoElementSearch([causa, cidade], "bfs")))
+    }
+    else {
+        graph.searchGraphSelect([cidade, dinastia, causa], "bfs");
+        res.send(getNameData(graph.searchResult));
+    }
+})
+//
+app.listen(3000, () => console.log("servidor rodando"));

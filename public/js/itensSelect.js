@@ -1,7 +1,7 @@
 
 
 
-//gerar as opções pro select
+//gerar as opï¿½ï¿½es pro select
 function geraOptions(vet, id) {
 
     let optionSelect = document.getElementById(id)
@@ -21,7 +21,8 @@ function listarArrays() {
     var idNome = "select-nome";
     var idCidadeNatal = "select-cidade";
     var idCausaMorte = "select-causa";
-    var dinastia = ['Constantinian',
+    var dinastia = ['Dinastia',
+        'Constantinian',
         'Gordian',
         'Julio-Claudian',
         'Flavian',
@@ -29,7 +30,8 @@ function listarArrays() {
         'Nerva-Antonine',
         'Valentinian',
         'Theodosian']
-    var nome = ['Galerius',
+    var nome = ['Nome',
+        'Galerius',
         'Lucinius',
         'Philip I',
         'Trebonianus Gallus',
@@ -97,7 +99,8 @@ function listarArrays() {
         'Maxentius',
         'Gordian III',
         'Constantius II'];
-    var cidadeNatal = ['Romuliana',
+    var cidadeNatal = ['Cidade natal',
+        'Romuliana',
         'Felix Romuliana',
         'Shahba',
         '',
@@ -129,7 +132,8 @@ function listarArrays() {
         'Leptis Magna',
         'Narni',
         'Sirmium'];
-    var causaMorte = ['Natural Causes',
+    var causaMorte = ['Causa da morte',
+        'Natural Causes',
         'Execution',
         'Assassination',
         'Unknown',

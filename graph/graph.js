@@ -49,7 +49,7 @@ module.exports = class Graph {
             if (this.arrayEquals(this.adjacent[v], goal)) {
                 this.searchResult.push(v);
             } if (v === goal) {
-                this.searchResult.push(this.adjacent[v])
+                this.searchResult = this.adjacent[v];
                 return true;
             }
 
