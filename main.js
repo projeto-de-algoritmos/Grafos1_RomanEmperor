@@ -44,46 +44,100 @@ let getNameData = (data) => {
     });
     return response
 };
-graph.searchGraphSelect('Caligula', "dfs");
-console.log(getNameData(graph.searchResult))
-console.log(" ----------------------- ")
-graph.searchGraphSelect(['', 'Constantinian', 'Execution'], "bfs");
-console.log(getNameData(graph.searchResult))
-console.log(" ----------------------- ")
-console.log(getNameData(twoElementSearch(['Constantinian', ''], "bfs")))
 
-// teste
-app.post("", function (req, res) {
-    let dinastia = req.body.dinastia
-    let nome = req.body.nome
-    let cidade = req.body.cidade
-    let causa = req.body.causa
+
+app.set('view engine', 'pug')
+app.post("/linhagem", function (req, res) {
+    let dinastia = req.body.dinastia;
+    let nome = req.body.nome;
+    let cidade = req.body.cidade;
+    let causa = req.body.causa;
     if (nome != null && nome != 'Nome') {
         graph.searchGraphSelect(nome, "dfs");
-        res.send(getNameData(graph.searchResult));
+        var resposta = getNameData(graph.searchResult);
+        var html = contarHitoria(resposta);
+        res.render('../views/index', {
+            title: 'Linhagens', message: html
+        });
+        //res.send(resposta);} 
     }
     else if ((cidade == null || cidade == 'Cidade natal') && (causa == null || causa == 'Causa da morte')) {
         graph.searchGraphSelect(dinastia, "bfs");
-        res.send(getNameData(graph.searchResult));
+        var resposta2 = getNameData(graph.searchResult);
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
+        // res.send(resposta2);
     } else if ((causa == null || causa == 'Causa da morte') && (dinastia == null || dinastia == 'Dinastia')) {
         graph.searchGraphSelect(cidade, "bfs");
-        res.send(getNameData(graph.searchResult));
+        var resposta2 = getNameData(graph.searchResult);
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
+
     } else if ((cidade == null || cidade == 'Cidade natal') && (dinastia == null || dinastia == 'Dinastia')) {
         graph.searchGraphSelect(causa, "bfs");
-        res.send(getNameData(graph.searchResult));
+        var resposta2 = (getNameData(graph.searchResult));
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
     }
 
     else if (cidade == null || cidade == 'Cidade natal') {
-        res.send(getNameData(twoElementSearch([dinastia, causa], "bfs")))
+        var resposta2 = (getNameData(twoElementSearch([dinastia, causa], "bfs")))
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
+
     } else if (causa == null || causa == 'Causa da morte') {
-        res.send(getNameData(twoElementSearch([dinastia, cidade], "bfs")))
+        var resposta2 = (getNameData(twoElementSearch([dinastia, cidade], "bfs")))
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
     } else if (dinastia == null || dinastia == 'Dinastia') {
-        res.send(getNameData(twoElementSearch([causa, cidade], "bfs")))
+        var resposta2 = (getNameData(twoElementSearch([causa, cidade], "bfs")))
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
     }
     else {
         graph.searchGraphSelect([cidade, dinastia, causa], "bfs");
-        res.send(getNameData(graph.searchResult));
+        var resposta2 = (getNameData(graph.searchResult));
+        var html = contarHitoria(resposta2);
+        res.render('../views/index', {
+            title: 'Linhagens',
+            message: html
+        });
     }
 })
 //
-app.listen(3000, () => console.log("servidor rodando"));
+function contarHitoria(resposta2) {
+    var html = " ";
+    for (var i = 0; i < resposta2.length; i++) {
+        console.log(resposta2[i].Name + '\n');
+        html += "Encontrado no index: " + resposta2[i].Index;
+        html += " O imperador " + resposta2[i].Name;
+        html += " que possui o nome completo de " + resposta2[i].FullName;
+        html += " nasceu em " + resposta2[i].BirthCity + " na provincia de " + resposta2[i].BirthProvince;
+        html += " e fazia parte da dinastia " + resposta2[i].Dynasty;
+        html += " e teve como causa da morte " + resposta2[i].Cause + '\n';
+        html += " ,viveu de " + resposta2[i].Birth + " ate " + resposta2[i].Death;
+        html += " e tem como sucessao " + resposta2[i].Succession + ";  ";
+    }
+
+    return html;
+
+}
+app.listen(3001, () => console.log("servidor rodando"));
