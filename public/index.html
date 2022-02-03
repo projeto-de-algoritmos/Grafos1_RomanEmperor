@@ -26,23 +26,26 @@
 
     </header>
     <main >
-        <section class="container">
+        <section class="container section-principal">
+            <div>
+                <h1 class="titulo">Roman Emperor Searcher</h1>
+            </div>
             <form action="/linhagem" method="POST">
-                
+
                 <div class="selects">
                     <select placeholder="Dinastia" name="dinastia" id="select-dinastia" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option  disabled selected>Dinastia</option>
+                        <option disabled selected>Dinastia</option>
 
                     </select>
                 </div>
                 <div class="selects">
-                    <select  name="nome" id="select-nome" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select name="nome" id="select-nome" class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option disabled selected>Nome</option>
 
                     </select>
                 </div>
                 <div class="selects">
-                    <select name ="cidade" id="select-cidade" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select name="cidade" id="select-cidade" class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option disabled selected>Cidade Natal</option>
 
                     </select>
@@ -55,8 +58,8 @@
 
                 </div>
                 <button type="submit" class="btn btn-dark  btn-sm selects .active" id="botao">Procurar</button>
-              </form>
-</section>
+            </form>
+        </section>
     </main>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->

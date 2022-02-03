@@ -1,7 +1,6 @@
-.selects{
-    width: 30%;
-    margin-top :2%;
-
+.selects {
+    width: 40%;
+    margin-top: 2%;
 }
 
 body {
@@ -12,4 +11,14 @@ body {
 
 #botao {
     background-color: #7d7d7d;
+    /*background-color: #7d7d7d; */
+    background-color: brown;
+}
+
+.titulo{
+    color-interpolation: inherit;
+    color: brown;
+}
+.section-principal {
+    margin-left: 30%;
 }
