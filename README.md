@@ -15,16 +15,21 @@ Roman Emperor é um contador de histórias para os apaixonados pela história ro
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
-## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+## Instalação
 
-## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+**Linguagem**: JavaScript<br>
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Para rodar o projeto localmente, é necessário possuir o node instalado na máquina
+
+Clone o repositório em sua máquina local.
+
+Para executar o projeto:
+
+```
+node main.js
+```
+
+O projeto estará em execução no endereço `localhost:3001`
 
 
 
