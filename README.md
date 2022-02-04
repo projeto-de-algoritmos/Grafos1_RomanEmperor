@@ -13,10 +13,29 @@
 Roman Emperor é um contador de histórias para os apaixonados pela história romana, baseado em pesquisas em grafos, em que o usuário escolhe um item para filtrar e o Roman mostra as linhagens encontradas na base de dados referentes a pesquisa, tendo como objetivo facilitar os estudos à respeito da roma antiga. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
-	![Página Inicial](prints/paginaInicial.png)
-	![filtrando dado](prints/pesquisa.png)
-	![história encontrada](prints/historia.jpeg)
+
+<center>
+
+<img   src="prints/paginaInicial.png" alt="s1">
+<figcaption>Página inicial</figcaption>
+
+</center>
+
+
+<center>
+
+<img   src="prints/pesquisa.png" alt="s2">
+<figcaption>Pesquisa dados</figcaption>
+
+</center>
+
+<center>
+
+<img   src="prints/historia.jpeg" alt="s3">
+<figcaption>História encontrada</figcaption>
+
+</center>
+
 
 ## Instalação
 
