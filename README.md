@@ -14,6 +14,9 @@ Roman Emperor é um contador de histórias para os apaixonados pela história ro
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
+	![Página Inicial](prints/paginaInicial.png)
+	![filtrando dado](prints/pesquisa.png)
+	![história encontrada](prints/historia.jpeg)
 
 ## Instalação
 
@@ -21,7 +24,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 Para rodar o projeto localmente, é necessário possuir o node instalado na máquina
 
-Clone o repositório em sua máquina local.
+Clone o repositório em sua máquina local e baixe as dependências com npm install.
 
 Para executar o projeto:
 
